@@ -1,6 +1,6 @@
 /* ============================================================
    SUBLIVO · estilos del sitio
-   Colores de marca: rosado #f8c7dc · crema #fffce9 · vino #3d1f2e
+   Colores de marca: rosado #f8c7dc · crema #fffce9 · blanco · texto #2b2b2b
    Tipografía: Champagne & Limousines (carpeta fonts/)
    ============================================================ */
 @font-face {
@@ -28,8 +28,8 @@
   --bone: #fffce9;
   --paper: #fff;
   --pink: #f8c7dc;
-  --ink: #3d1f2e;
-  --stone: #62404f;
+  --ink: #2b2b2b;
+  --stone: #666666;
   --line: #efdbe3;
   --serif: "Champagne & Limousines", system-ui, sans-serif;
   --sans: "Champagne & Limousines", system-ui, sans-serif;
@@ -558,7 +558,7 @@ body {
   color: var(--ink);
 }
 .hero p {
-  color: #4f2d3e;
+  color: #444444;
 }
 .hero .btn,
 .hero .btn.light {
@@ -592,7 +592,7 @@ body {
   color: var(--pink);
 }
 .ov {
-  background: rgba(61, 31, 46, 0.45);
+  background: rgba(0, 0, 0, 0.35);
 }
 .hero h1,
 .pagehead h1,
@@ -756,7 +756,7 @@ body.has {
 }
 .marq div {
   display: inline-block;
-  animation: mq 60s linear infinite;
+  animation: mq 300s linear infinite;
 }
 @keyframes mq {
   to {
@@ -1312,4 +1312,44 @@ body {
   #pills {
     scroll-padding: 0 20px;
   }
+}
+
+/* ============================================================
+   TEMA CLARO: blanco en lugar de vino tinto
+   (encabezado, pie, cinta, barra del carrito y botones)
+   ============================================================ */
+.nav{background:#fff;border-bottom:2px solid var(--pink)}
+.links,.cartbtn{color:var(--ink)}
+.cartbtn{border-color:var(--pink);background:#fff}.cartbtn:hover{background:var(--pink);color:var(--ink)}
+.links a.on{text-decoration-color:var(--pink);text-decoration-thickness:3px}
+.foot{background:#fff;color:var(--ink);border-top:2px solid var(--pink)}.foot p{color:var(--stone)}.foot .links a{color:var(--ink)}
+.marq{background:#fff;color:var(--ink);border-bottom:2px solid var(--pink)}
+.btn{background:var(--pink);border-color:var(--pink);color:var(--ink)}.btn:hover{background:#fbd9e8;border-color:#fbd9e8}
+.hero .btn,.hero .btn.light{background:#fff;border-color:#fff;color:var(--ink)}.hero .btn:hover{background:var(--bone);border-color:var(--bone)}
+.btn.line,.hero .btn.line{background:transparent;border-color:var(--ink);color:var(--ink)}.btn.line:hover,.hero .btn.line:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+.btn.lt{background:transparent;border-color:var(--ink);color:var(--ink)}.btn.lt:hover{background:var(--ink);color:#fff}
+.p .btn.full:hover{background:#fff;border-color:var(--ink);color:var(--ink)}
+.pill.on,.pill.on:hover{background:var(--pink);color:var(--ink);border-color:var(--ink)}.pill.on small{color:var(--ink)}
+.fv.on{background:var(--pink);color:var(--ink)}
+.bar{background:#fff;color:var(--ink);border-top:3px solid var(--pink)}.bp{color:var(--ink);font-weight:700}
+.card.c1{background:var(--pink);border-color:var(--pink);color:var(--ink)}.c1 p,.c1 .num{color:var(--ink)}
+.card.c1::after,.card.c3::after{background:var(--bone);-webkit-mask:url(img/iso-rosa.png) center/contain no-repeat;mask:url(img/iso-rosa.png) center/contain no-repeat}
+.card.c2{background:#fff;border-color:var(--pink);color:var(--ink)}.card.c2::after{background:url(img/iso-rosa.png) center/contain no-repeat;-webkit-mask:none;mask:none}
+.card.c3{background:var(--pink);border-color:var(--pink)}
+@media(max-width:860px){.nav .links{border-top-color:var(--pink)}}
+
+/* Isotipos de las tarjetas: solo imágenes de fondo (sin máscaras), para que funcionen también al abrir el archivo directamente */
+.card.c1::after,
+.card.c3::after {
+  background: url(img/iso-crema.png) center/contain no-repeat;
+  -webkit-mask: none;
+  mask: none;
+}
+.card.c2::after {
+  background: url(img/iso-rosa.png) center/contain no-repeat;
+  -webkit-mask: none;
+  mask: none;
+}
+.hero h1 {
+  text-wrap: balance;
 }

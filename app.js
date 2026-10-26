@@ -35,7 +35,7 @@ const ctl = (i) =>
     ? `<div class="step"><button data-a="dec" data-i="${i}" aria-label="Quitar uno">−</button><span>${cart[i]}<em> en el carrito</em></span><button data-a="inc" data-i="${i}" aria-label="Agregar uno">+</button></div>`
     : `<button class="btn full" data-a="inc" data-i="${i}">Agregar</button>`;
 const card = (p) =>
-  `<article class="p"><div class="ph"><img loading="lazy" src="img/${p.i}.jpg" alt="${esc(p.n)} ${esc(p.b)}"><button class="fv ${fav[p.i] ? "on" : ""}" data-a="fav" data-i="${p.i}" aria-label="Favorito">♥</button></div><div class="b"><div class="br">${esc(p.b)}</div><h3>${esc(p.n)}</h3>${p.x ? `<div class="x">${esc(p.x)}</div>` : ""}<div class="pr">${p.o ? `<s>Original ${money(p.o)}</s>` : ""}${money(p.p)}</div><div class="ctl" data-c="${p.i}">${ctl(p.i)}</div></div></article>`;
+  `<article class="p"><div class="ph"><img loading="lazy" src="img/${p.i}.jpg" alt="${esc(p.n)} ${esc(p.b)}"><button class="fv ${fav[p.i] ? "on" : ""}" data-a="fav" data-i="${p.i}" aria-label="Agregar a favoritos">♥</button></div><div class="b"><div class="br">${esc(p.b)}</div><h3>${esc(p.n)}</h3>${p.x ? `<div class="x">${esc(p.x)}</div>` : ""}<div class="pr">${p.o ? `<s>Original ${money(p.o)}</s>` : ""}${money(p.p)}</div><div class="ctl" data-c="${p.i}">${ctl(p.i)}</div></div></article>`;
 // carrito (panel lateral)
 document.body.insertAdjacentHTML(
   "beforeend",
@@ -54,7 +54,7 @@ function paint() {
         .join("")
     : '<p class="empty">Tu carrito está vacío.<br>Agrega tus perfumes favoritos.</p>';
   const msg = encodeURIComponent(
-    "Hola Sublivo, quiero hacer este pedido:\n" +
+    "Hola, Sublivo. Quiero hacer este pedido:\n" +
       ids
         .map((i) => `• ${cart[i]} × ${byId[i].n} (${byId[i].b}) — ${money(byId[i].p * cart[i])}`)
         .join("\n") +
