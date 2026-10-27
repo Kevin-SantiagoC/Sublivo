@@ -1,6 +1,6 @@
 /* SUBLIVO · lógica del sitio: carrito, favoritos, filtros y barra inferior.
    Los productos vienen de products.js. Cambia WA por el número de WhatsApp de la tienda. */
-const WA = "573000000000"; // ← número de WhatsApp de la tienda (código país + número, sin +)
+const WA = "573226267514"; // ← número de WhatsApp de la tienda (código país + número, sin +)
 const P = window.PRODUCTS,
   $ = (s, r = document) => r.querySelector(s),
   $$ = (s, r = document) => [...r.querySelectorAll(s)];
